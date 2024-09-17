@@ -1,11 +1,13 @@
 package manager.dto;
 
+import manager.enums.Gender;
+
 public class StudentDTO {
 
     private String name;
     private String lastName;
     private String email;
-    private String gender;
+    private Gender gender;
     private String mobile;
     private String dateOfBirth;
     private String subject;
@@ -45,5 +47,13 @@ public class StudentDTO {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

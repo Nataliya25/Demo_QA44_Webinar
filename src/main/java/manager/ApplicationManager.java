@@ -22,8 +22,8 @@ public class ApplicationManager {
     @BeforeMethod
     public void setUp(){
         //chromeOptions.addArguments("load-extension=C://Tools//5.10.1_0");
-      //  chromeOptions.addArguments("load-extension=C:/Tools/5.10.1_0");
-        driver = new ChromeDriver();
+        chromeOptions.addArguments("load-extension=C:/Tools/5.10.1_0");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         // driver.navigate().to("https://demoqa.com/");
 
@@ -38,8 +38,8 @@ public class ApplicationManager {
         for (String s:tabs) {
             System.out.println("tab-->"+s);
         }
-        //driver.switchTo().window(tabs.get(1)).close();
-        //driver.switchTo().window(tabs.get(0));
+        driver.switchTo().window(tabs.get(1)).close();
+        driver.switchTo().window(tabs.get(0));
     }
 
 
