@@ -23,6 +23,7 @@ public class HomePage extends BasePage {
 
 
     public FormsPage clickBtnForms(){
+        //hideFooter();
         btnForm.click();
         return new FormsPage(driver);
     }

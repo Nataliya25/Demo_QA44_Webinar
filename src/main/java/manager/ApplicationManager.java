@@ -12,7 +12,7 @@ import java.util.List;
 public class ApplicationManager {
 
     private WebDriver driver;
-   // private ChromeOptions chromeOptions = new ChromeOptions();
+    private ChromeOptions chromeOptions = new ChromeOptions();
 
     public WebDriver getDriver() {
         return driver;
@@ -28,11 +28,11 @@ public class ApplicationManager {
         // driver.navigate().to("https://demoqa.com/");
 
 
-        // try {
-           // Thread.sleep(5);
-       // } catch (InterruptedException e) {
-      //      throw new RuntimeException(e);
-      //  }
+         try {
+           Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         List<String>tabs = new ArrayList<>(driver.getWindowHandles());
         for (String s:tabs) {
