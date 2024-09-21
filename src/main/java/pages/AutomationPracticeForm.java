@@ -2,12 +2,16 @@ package pages;
 
 import manager.dto.StudentDTO;
 import manager.enums.Gender;
+import manager.enums.Hobbies;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import java.util.List;
 
 public class AutomationPracticeForm extends BasePage{
 
@@ -25,17 +29,100 @@ public class AutomationPracticeForm extends BasePage{
     @FindBy(xpath = "//*[@placeholder='name@example.com']")
     WebElement fieldEmail;
 
+    @FindBy(id = "userNumber")
+    WebElement fieldMobileNumber;
 
+    @FindBy(id = "dateOfBirthInput")
+    WebElement fieldDateOfBirth; //18 Jun 2019
+
+    @FindBy(id = "subjectsInput")
+    WebElement fieldSubject;
+
+    @FindBy (id ="currentAddress" )
+    WebElement fieldCurrentAddress;
+
+    @FindBy(id = "react-select-3-input")
+    WebElement fieldState;
+
+    @FindBy(id = "react-select-4-input")
+    WebElement fieldCity;
+
+    @FindBy(xpath = "//button[text()='Submit']")
+    WebElement btnSubmit;
 
     public AutomationPracticeForm fillStudentsForm(StudentDTO student){
 
+        //hideFooter();
         fieldFirstdName.sendKeys(student.getName());
         fieldLastName.sendKeys(student.getLastName());
         fieldEmail.sendKeys(student.getEmail());
         clickGender(student.getGender());
+        fieldMobileNumber.sendKeys(student.getMobile());
+
+        //fieldDateOfBirth.sendKeys(student.getDateOfBirth());
+
+        typeFieldDataOfBirth(student.getDateOfBirth());
+        typeFieldSubject(student.getSubject());
+        typeHobbies(student.getHobbies());
+        fieldCurrentAddress.sendKeys(student.getCurrentAddress());
+        //=================================================================
+
+        fieldState.sendKeys(student.getState());
+        fieldState.sendKeys(Keys.ENTER);
+        fieldCity.sendKeys(student.getCity());
+        fieldCity.sendKeys(Keys.ENTER);
 
 
         return this;
+    }
+
+    public AutomationPracticeForm clickBtnSubmit (){
+        btnSubmit.click();
+        return this;
+    }
+
+    private void typeHobbies(List<Hobbies> hobbies) {
+        for (Hobbies h : hobbies) {
+            switch (h) {
+                case MUSIC -> {
+                    driver.findElement(By.cssSelector(h.getLocator())).click();
+                    break;
+                }
+                case SPORTS -> {
+                    driver.findElement(By.cssSelector(h.getLocator())).click();
+                    break;
+                }
+                case READING -> {
+                    driver.findElement(By.cssSelector(h.getLocator())).click();
+                    break;
+                }
+            }
+        }
+    }
+
+    private void typeFieldSubject(String subject) {
+        //"Math, Physics, Economy"
+        String [] splitArray = subject.split(", "); // ["Math"]["Physics"]["Economy"]
+        fieldSubject.click();
+
+        for(String str:splitArray){
+            fieldSubject.sendKeys(str);
+            fieldSubject.sendKeys(Keys.ENTER);
+        }
+    }
+
+    private void typeFieldDataOfBirth(String dateOfBirth) {
+        String operationSystem = System.getProperty("os.name");
+
+        fieldDateOfBirth.click();
+        if(operationSystem.startsWith("Win"))
+            fieldDateOfBirth.sendKeys(Keys.chord(Keys.CONTROL,"a"));
+        else if (operationSystem.startsWith("Mac"))
+            fieldDateOfBirth.sendKeys(Keys.chord(Keys.COMMAND,"a"));
+
+        fieldDateOfBirth.sendKeys(dateOfBirth);
+        fieldDateOfBirth.sendKeys(Keys.ENTER);
+
     }
 
     private void clickGender(Gender gender) {
