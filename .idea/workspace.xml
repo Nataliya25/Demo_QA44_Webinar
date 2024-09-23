@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53cae3b9-6c10-4ccc-96d0-b6c899f9a182" name="Changes" comment="Added AutomationPracticeForm">
+    <list default="true" id="53cae3b9-6c10-4ccc-96d0-b6c899f9a182" name="Changes" comment="Added methods FillFields">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/enums/Hobbies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/enums/Hobbies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AutomationPracticeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AutomationPracticeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PracticeFormTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PracticeFormTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +44,11 @@
     &quot;accountId&quot;: &quot;de2f3dfc-dc5f-4914-8e13-360a0dc7fa09&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/pages/AutomationPracticeForm.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -54,23 +61,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Demo_QA44_Webinar [dependencies].executor": "Run",
-    "Gradle.HomeTests.executor": "Run",
-    "Gradle.HomeTests.test.executor": "Run",
-    "Gradle.PracticeFormTests.practiceFormPositiveTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Documents/GitHub/Phone_Book",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Demo_QA44_Webinar [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.HomeTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.HomeTests.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PracticeFormTests.practiceFormPositiveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PracticeFormTests.practiceFormPositiveTest_Soft.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Documents/GitHub/Demo_QA44_Webinar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.PracticeFormTests.practiceFormPositiveTest">
+}</component>
+  <component name="RunManager" selected="Gradle.PracticeFormTests.practiceFormPositiveTest_Soft">
     <configuration name="Demo_QA44_Webinar [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -165,8 +173,33 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="PracticeFormTests.practiceFormPositiveTest_Soft" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.PracticeFormTests.practiceFormPositiveTest_Soft&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PracticeFormTests.practiceFormPositiveTest_Soft" />
         <item itemvalue="Gradle.PracticeFormTests.practiceFormPositiveTest" />
         <item itemvalue="Gradle.HomeTests.test" />
         <item itemvalue="Gradle.HomeTests" />
@@ -231,12 +264,21 @@
       <option name="project" value="LOCAL" />
       <updated>1726575857164</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added methods FillFields">
+      <option name="closed" value="true" />
+      <created>1726915022033</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726915022033</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project_webinar" />
     <MESSAGE value="Added AutomationPracticeForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AutomationPracticeForm" />
+    <MESSAGE value="Added methods FillFields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods FillFields" />
   </component>
 </project>
